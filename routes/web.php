@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index')->name('admin.index');
+
+Route::get('calculate', 'CalculationController@calculate')->name('calculate');

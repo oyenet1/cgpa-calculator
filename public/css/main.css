@@ -49,6 +49,18 @@ footer {
 
 div.footer {
   background-color: rgba(70, 100, 70, 0.5);
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+}
+
+div.form {
+  background-color: rgba(50, 50, 50, 0.5) !important;
+}
+
+img.abj {
+  border: 10px solid transparent;
+  background-color: white;
 }
 
 /* remove link decoration */
@@ -82,9 +94,16 @@ a.i-link:hover {
   } */
 
 input[type=email]:focus,
-input.form-control {
-  border: none !important;
-  box-shadow: 0 !important;
-  background-color: rgba(0, 150, 0, 0.5) !important;
+input.form-control1 {
+  border: 0 !important;
+  color: white !important;
+  box-shadow: none !important;
+  background-color: rgba(0, 150, 0, 0.1) !important;
+}
+
+.body {
+  background-image: url(/images/uniabuja.jpg?59f98ba7a154cf37645d01de4cb6ea1e) !important;
+  background-size: cover;
+  background-attachment: fixed;
 }
 

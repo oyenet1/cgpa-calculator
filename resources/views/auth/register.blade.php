@@ -1,77 +1,83 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    <title>calculate</title>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/extra.js') }}" defer></script>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+</head>
+
+<body class="body">
+    <div class="container-fluid">
+        <div class="row pt-5">
+            <div
+                class="form col-10 col-sm-8 col-md-6 col-lg-4 offset-1 offset-sm-2 offset-md-3 offset-lg-4 mt-5 rounded">
+                <img src="image/Bitmap.png" alt="uniAbujalogo" class="abj rounded-circle mx-auto d-block mt-n5 p-1"
+                    style="max-width: 100px; height: auto;">
+                <form class="pb-3 my-3">
+                    <div class="input-group form-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-success"><i class="fas fa-envelope text-white"></i></span>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <input type="text" class="form-control" placeholder="Enter Username">
+                    </div>
+                    <div class="input-group form-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-success"><i
+                                    class="fas fa-user-graduate text-light"></i></span>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <select name="dept" id="dept" class="form-control">
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Statistics">Statistics</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Micro-biology">Micro-biology</option>
+                        </select>
+                    </div>
+                    <div class="input-group form-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-success"><i class="fas fa-lock text-light"></i></span>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
+                        <input type="password" class="form-control" placeholder="Enter password">
+                    </div>
+                    <div class="input-group form-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-success text-light" id="basic-addon1"><i
+                                    class="fas fa-user-lock text-light"></i></span>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                        <input type="password" class="form-control" placeholder="Repeat password">
+                    </div>
+                    {{-- <div class="form-check-inline">
+                        <label for="pasid" class="form-check-label text-light pb-1">
+                            <input type="checkbox" name="gender" id="" class="form-check-input">Show Password
+                        </label>
+                    </div> --}}
+                    <div class="form-group">
+                        <input type="submit" value="Create an Account" class="form-control bg-success text-light">
+                    </div>
+                    <p class="mb-0 text-light text-center">Already a User <a href="login.php" class="text-success">Login
+                            Here</a></p>
+                </form>
             </div>
         </div>
     </div>
-</div>
-@endsection
+</body>
+
+</html>
