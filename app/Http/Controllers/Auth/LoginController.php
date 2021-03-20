@@ -29,12 +29,14 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        if ($user->hasRole('superadministrator') or $user->hasRole('administrator') or $user->hasRole('manager')) {
+        if ($user->hasRole('admin')) {
             return redirect('/admin');
+        }
+        if ($user->hasRole('lecturer') or $user->hasRole('student')) {
+            return redirect('/cgpa');
         } else {
             return redirect('/home');
         }
-
     }
 
     /**

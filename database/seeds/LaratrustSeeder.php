@@ -63,7 +63,7 @@ class LaratrustSeeder extends Seeder
                 // Create default user for each role
                 $user = \App\User::create([
                     'name' => ucwords(str_replace('_', ' ', $key)),
-                    'email' => $key.'@app.com',
+                    'email' => $key.'@cgpa.com',
                     'password' => bcrypt('password')
                 ]);
                 $user->attachRole($role);
@@ -89,7 +89,7 @@ class LaratrustSeeder extends Seeder
         if (Config::get('laratrust_seeder.truncate_tables')) {
             DB::table('roles')->truncate();
             DB::table('permissions')->truncate();
-            
+
             if (Config::get('laratrust_seeder.create_users')) {
                 $usersTable = (new \App\User)->getTable();
                 DB::table($usersTable)->truncate();

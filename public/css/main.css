@@ -94,11 +94,13 @@ a.i-link:hover {
   } */
 
 input[type=email]:focus,
-input.form-control1 {
-  border: 0 !important;
+input.form-control1:focus,
+input.form-control:focus {
+  border: 1px !important;
+  border-color: #0afa96;
   color: white !important;
   box-shadow: none !important;
-  background-color: rgba(0, 150, 0, 0.1) !important;
+  background-color: rgba(0, 250, 200, 0.1) !important;
 }
 
 .body {
