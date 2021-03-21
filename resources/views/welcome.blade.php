@@ -6,6 +6,17 @@
         <div class="row justify-content-center">
             {{-- image header --}}
             <div class="col-11">
+                @if (Auth::user() == true)
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                            <strong>Dear {{ Auth::user()->name }}, </strong> {{ session('error') }}
+                        </div>
+                    @endif
+                @endif
                 <!-- ====headers=== -->
                 <div class="d-flex row mx-auto p-1 justify-content-center">
                     <div class="col-sm-3 col-lg-2">
@@ -47,7 +58,7 @@
     </div>
     {{-- calculation button --}}
     <div class="mx-auto d-block text-center mb-n3">
-        <a href="{{route('calculate')}}" class="btn btn-primary">Calculate</a>
+        <a href="{{ route('calculate') }}" class="btn btn-primary">Calculate</a>
     </div>
     <div class="container-fluid p-5" style="background-color: rgba(255, 255, 255, .5)"></div>
 @endsection

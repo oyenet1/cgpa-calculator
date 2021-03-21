@@ -32,7 +32,7 @@ class LoginController extends Controller
         if ($user->hasRole('admin')) {
             return redirect('/admin');
         }
-        if ($user->hasRole('lecturer') or $user->hasRole('student')) {
+        if ($user->hasRole('lecturer')) {
             return redirect('/cgpa');
         } else {
             return redirect('/home');

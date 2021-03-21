@@ -20,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
-Route::get('calculate', 'CalculationController@calculate')->name('calculate');
+Route::get('cgpa', 'CgpaController@index')->name('cgpa.index');
+
+Route::get('calculate', 'CalculationController@calculate')->name('calculate')->middleware('auth');

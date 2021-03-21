@@ -184,7 +184,7 @@ return [
              */
             'abort' => [
                 'code' => 403,
-                'message' => 'User does not have any of the necessary access rights.'
+                'message' => 'You donot have any of the necessary access rights to visit that page.'
             ],
 
             /**
@@ -194,10 +194,10 @@ return [
              * If the message content is empty it won't be added to the redirection.
              */
             'redirect' => [
-                'url' => '/home',
+                'url' => '/',
                 'message' => [
                     'key' => 'error',
-                    'content' => 'User does not have any of the necessary access rights.'
+                    'content' => 'You donot have any of the necessary access rights to visit that page.'
                 ]
             ]
         ]

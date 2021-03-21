@@ -24,10 +24,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/vali.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {{-- css styles --}}
+    @yield('styles')
+    @livewireStyles
 </head>
 
 <body class="app sidebar-mini rtl">
@@ -141,18 +145,11 @@
 
     {{-- main page --}}
     <main class="app-content">
-        <div class="app-title">
-            <div>
-                <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
-                <p>A free and open source Bootstrap 4 admin template</p>
-            </div>
-            <ul class="app-breadcrumb breadcrumb">
-                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            </ul>
-        </div>
+        @yield('app-title')
         @yield('content')
     </main>
+
+    @livewireScripts
     <!-- Essential javascripts for application to work-->
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/popper.min.js"></script>
@@ -227,6 +224,9 @@
         }
 
     </script>
+
+    {{-- javascripts --}}
+    @yield('scripts')
 </body>
 
 </html>

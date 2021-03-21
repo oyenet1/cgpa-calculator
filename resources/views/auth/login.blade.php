@@ -65,14 +65,14 @@
                         </select>
                     </div> --}}
                     <div class="form-group">
-                        <label for="password " class="mb-0 text-white">Password:</label>
+                        <label for="password" class="mb-0 text-white">Password:</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-success">
                                     <i class="fas fa-lock text-light"></i>
                                 </span>
                             </div>
-                            <input id="password" type="password" class="form-control text-white @error('password') is-invalid @enderror" placeholder="Enter password" value="{{ old('password') ?? '' }}">
+                            <input id="password" type="password" class="form-control text-white @error('password') is-invalid @enderror" placeholder="Enter password" name="password" value="{{ old('password') ?? '' }}">
                         </div>
                         @error('password')
                             <span class="text-danger small p-1 m-0">

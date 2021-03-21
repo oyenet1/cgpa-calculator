@@ -11,9 +11,15 @@ class CgpaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('role:lecturer|admin');
+    }
+
     public function index()
     {
-        //
+        return view('cgpa.index');
     }
 
     /**
