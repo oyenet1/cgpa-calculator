@@ -7,27 +7,43 @@ use Livewire\Component;
 class Cgpa extends Component
 {
     public $inputs = [];
+    public $gpa = [];
+    public $cgpa = [];
 
     public function mount()
     {
         $this->addNew();
     }
 
-    public function addForm()
+    public function render()
     {
+        return view('livewire.cgpa');
     }
+
     public function addNew()
     {
-        $this->inputs[] = [];
+        $this->inputs[]++;
     }
+
     public function remove($index)
     {
         unset($this->inputs[$index]);
         $this->inputs = array_values($this->inputs);
     }
 
-    public function render()
+    public function calGpa()
     {
-        return view('livewire.cgpa');
+        $this->gpa['totalUnit'] = array_sum($this->validate([
+            'inputs.*.unit' => ['required', 'integer']
+        ]));
+
+        $this->gpa['totalScore'] = array_sum($this->validate([
+            'inputs.*.score' => ['required', 'integer']
+        ]));
+
+        
+    }
+    public function calCgpa()
+    {
     }
 }

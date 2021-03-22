@@ -27,17 +27,17 @@
                                 <td>
                                     <select wire:model.lazy='inputs.{{ $i }}.score' name="scores[]"
                                         id="scores" class="form-control">
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="D">D</option>
-                                        <option value="E">E</option>
-                                        <option value="F">F</option>
+                                        <option value=5>A</option>
+                                        <option value=4>B</option>
+                                        <option value=3>C</option>
+                                        <option value=2>D</option>
+                                        <option value=1>E</option>
+                                        <option value=0>F</option>
                                     </select>
                                 </td>
                                 <td>
-                                    <button wire:click='remove({{ $i }})' class="btn fas fa-minus btn-danger"
-                                        type="button"> </button>
+                                    <button wire:click='remove({{ $i }})'
+                                        class="btn btn-sm fas fa-minus btn-danger" type="button"> </button>
                                 </td>
                             </tr>
                         @endfor
@@ -49,7 +49,7 @@
                     <td class="font-weight-bold">{{ $result ?? '' }}</td>
                     <td>
                         {{-- vue template for cgpa --}}
-                        <button class="btn btn-primary">Save</button>
+                        <button type="button" wire:click="calGpa" class="btn btn-primary">Calculate</button>
                     </td>
                 </tfoot>
             </table>
