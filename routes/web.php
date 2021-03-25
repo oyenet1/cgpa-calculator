@@ -26,3 +26,12 @@ Route::get('/admin', 'AdminController@index')->name('admin.index');
 Route::get('cgpa', 'CgpaController@index')->name('cgpa.index');
 
 Route::get('calculate', 'CalculationController@calculate')->name('calculate')->middleware('auth');
+
+// courses
+Route::get('courses', 'CourseController@index')->name('courses.index');
+Route::get('courses/{course}', 'CourseController@show')->name('courses.show');
+Route::get('courses/{course}', 'CourseController@edit')->name('courses.edit');
+Route::delete('courses/{course}', 'CourseController@destroy')->name('courses.destroy');
+
+// profile
+Route::get('/profile/{user:name}', 'ProfileController@index')->name('profile.show');

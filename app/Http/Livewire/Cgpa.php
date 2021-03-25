@@ -10,6 +10,9 @@ class Cgpa extends Component
     public $gpa = [];
     public $cgpa = [];
 
+    // array of multiplication of units and respective scores
+    public $wgba = [];
+
     public function mount()
     {
         $this->addNew();
@@ -33,15 +36,20 @@ class Cgpa extends Component
 
     public function calGpa()
     {
-        $this->gpa['totalUnit'] = array_sum($this->validate([
+        $units = $this->validate([
             'inputs.*.unit' => ['required', 'integer']
-        ]));
+        ]);
 
-        $this->gpa['totalScore'] = array_sum($this->validate([
+        $grades = $this->validate([
             'inputs.*.score' => ['required', 'integer']
-        ]));
+        ]);
 
-        
+        for ($i = 0, $j = 0; $i < count($units), $j < count($grades); $i++, $j++) {
+            $this->wgba = $units[$i] * $grades[$j];
+        }
+
+        // total units
+        $this->gpa['totalUnit'] = array_sum($units);
     }
     public function calCgpa()
     {

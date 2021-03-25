@@ -13,25 +13,20 @@
     <!-- Scripts -->
 
     {{-- if you comment this js files uncomment the ones below at body --}}
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/extra.js') }}" defer></script> --}}
-
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="{{ asset('js/extra.js') }}" defer></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/vali.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/vali.css') }}">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {{-- css styles --}}
-    @yield('styles')
     @livewireStyles
+    @yield('styles')
 </head>
 
 <body class="app sidebar-mini rtl">
@@ -101,7 +96,7 @@
                     aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu dropdown-menu-right">
                     <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                    <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                    <li><a class="dropdown-item" href="{{ route('profile.show', auth()->user()->name) }}"><i class="fa fa-user fa-lg"></i> Profile</a></li>
                     <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();"><i
                                 class="fa fa-sign-out fa-lg"></i> Logout</a>
@@ -124,20 +119,36 @@
             </div>
         </div>
         <ul class="app-menu">
-            <li><a class="app-menu__item active" href="index.html"><i class="app-menu__icon fa fa-dashboard"></i><span
-                        class="app-menu__label">Dashboard</span></a></li>
-            <li><a class="app-menu__item" href="charts.html"><i class="app-menu__icon fa fa-pie-chart"></i><span
-                        class="app-menu__label">Charts</span></a></li>
-            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
-                        class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">UI Elements</span><i
-                        class="treeview-indicator fa fa-angle-right"></i></a>
+            <li>
+                <a class="app-menu__item active" href="{{ route('home') }}">
+                    <i class="app-menu__icon fa fa-dashboard"></i>
+                    <span class="app-menu__label">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a class="app-menu__item" href="{{ route('courses.index') }}">
+                    <i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Courses</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview">
+                    <i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">UI Elements</span><i
+                        class="treeview-indicator fa fa-angle-right"></i>
+                </a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon fa fa-circle-o"></i>
-                            Bootstrap Elements</a></li>
-                    <li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank"
-                            rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a></li>
-                    <li><a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-circle-o"></i> Cards</a></li>
-                    <li><a class="treeview-item" href="widgets.html"><i class="icon fa fa-circle-o"></i> Widgets</a>
+                    <li>
+                        <a class="treeview-item" href="bootstrap-components.html"><i class="icon fa fa-circle-o"></i>
+                            Bootstrap Elements</a>
+                    </li>
+                    <li>
+                        <a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank"
+                            rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a>
+                    </li>
+                    <li>
+                        <a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-circle-o"></i> Cards</a>
+                    </li>
+                    <li>
+                        <a class="treeview-item" href="widgets.html"><i class="icon fa fa-circle-o"></i> Widgets</a>
                     </li>
                 </ul>
             </li>
@@ -150,7 +161,7 @@
         @yield('content')
     </main>
 
-    @livewireScripts
+
     <!-- Essential javascripts for application to work-->
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/popper.min.js"></script>
@@ -226,6 +237,7 @@
 
     </script>
 
+    @livewireScripts
     {{-- javascripts --}}
     @yield('scripts')
 </body>

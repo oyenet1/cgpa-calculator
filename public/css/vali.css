@@ -12764,7 +12764,7 @@ hr.fc-divider {
 
 .fc-row table {
   /* don't put left/right border on anything within a fake row.
-    the outer tbody will worry about this */
+  the outer tbody will worry about this */
   border-left: 0 hidden transparent;
   border-right: 0 hidden transparent;
   /* no bottom borders on rows */
@@ -13211,8 +13211,8 @@ a.fc-more:hover {
   filter: alpha(opacity=30);
   /* for IE */
   /* opacity with small font can sometimes look too faded
-    might want to set the 'color' property instead
-    making day-numbers bold also fixes the problem */
+  might want to set the 'color' property instead
+  making day-numbers bold also fixes the problem */
 }
 
 /* AgendaView all-day area
@@ -13874,10 +13874,10 @@ be a descendant of the grid when it is being dragged.
 .app-menu__item.active,
 .app-menu__item:hover,
 .app-menu__item:focus {
-  background: #0d1214;
-  border-left-color: #009688;
-  text-decoration: none;
-  color: #fff;
+  background: #0d1214 !important;
+  border-left-color: #009688 !important;
+  text-decoration: none !important;
+  color: #fff !important;
 }
 
 .app-menu__icon {
@@ -15078,5 +15078,16 @@ be a descendant of the grid when it is being dragged.
 
 .user .user-settings label {
   color: #666;
+}
+
+table.details {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.values {
+  font-size: 5rem;
+  font-weight: 500;
+  opacity: 0.8;
 }
 

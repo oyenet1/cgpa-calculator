@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Profile;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -12,10 +13,14 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index()
+    public function __construct()
     {
-        return view('profile.index');
+        $this->middleware('auth');
+    }
+
+    public function index(User $user)
+    {
+        return view('profiles.index', compact(['user']));
     }
 
     /**

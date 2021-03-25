@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\User;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
@@ -21,8 +22,9 @@ class CourseController extends Controller
 
     public function index()
     {
+        $user = User::all();
         $courses = Course::all();
-        return view('courses.index', compact(['courses']));
+        return view('courses.index', compact(['courses', 'user']));
     }
 
     /**
@@ -91,6 +93,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return redirect()->back()->with('success', 'Course deleted successfully');
     }
 }

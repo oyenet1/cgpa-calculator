@@ -26,6 +26,19 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected static function boot()
+    {
+        //
+
+        parent::boot();
+
+        // create profile as soon as user created
+        static::created(function ($user){
+            $user->profile()->create();
+        });
+    }
+
     protected $hidden = [
         'password', 'remember_token',
     ];
