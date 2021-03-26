@@ -15081,13 +15081,45 @@ be a descendant of the grid when it is being dragged.
 }
 
 table.details {
-  font-size: 5rem;
+  font-size: 22px;
   font-weight: 600;
 }
 
-.values {
-  font-size: 5rem;
+td.values {
+  font-size: 20px;
   font-weight: 500;
   opacity: 0.8;
+}
+
+.bg-gray {
+  background-color: #f0f0f0;
+}
+
+.text-gray {
+  color: #f0f0f0;
+}
+
+.bg-gray1 {
+  background-color: #e6e6e6;
+}
+
+.text-gray1 {
+  color: #e6e6e6;
+}
+
+.bg-gray2 {
+  background-color: gainsboro;
+}
+
+.text-gray2 {
+  color: gainsboro;
+}
+
+.bg-gray3 {
+  background-color: #cdcdcd;
+}
+
+.text-gray3 {
+  color: #cdcdcd;
 }
 

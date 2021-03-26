@@ -16325,14 +16325,48 @@ be a descendant of the grid when it is being dragged.
 .user .user-settings label {
     color: #666;
 }
+
 //
 // profile styling
 table.details {
-    font-size: 4rem;
+    font-size: 22px;
     font-weight: 600;
 }
-.values{
-    font-size: 4rem;
+
+td.values {
+    font-size: 20px;
     font-weight: 500;
     opacity: .8;
+}
+
+.bg-gray {
+    background-color: rgba(240, 240, 240, 1);
+}
+
+.text-gray {
+    color: rgba(240, 240, 240, 1);
+}
+
+.bg-gray1 {
+    background-color: rgba(230, 230, 230, 1);
+}
+
+.text-gray1 {
+    color: rgba(230, 230, 230, 1);
+}
+
+.bg-gray2 {
+    background-color: rgba(220, 220, 220, 1);
+}
+
+.text-gray2 {
+    color: rgba(220, 220, 220, 1);
+}
+
+.bg-gray3 {
+    background-color: rgba(205, 205, 205, 1);
+}
+
+.text-gray3 {
+    color: rgba(205, 205, 205, 1);
 }

@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('image')->nullable();
             $table->string('faculty')->nullable();
+            $table->string('matric')->nullable();
             $table->string('department')->nullable();
             $table->integer('level')->nullable();
             $table->timestamps();

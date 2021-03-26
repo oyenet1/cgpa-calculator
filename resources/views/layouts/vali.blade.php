@@ -23,6 +23,35 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- google fonts --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=PT+Serif:wght@700&family=Train+One&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body,
+        .noto-300 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 300;
+        }
+
+        .noto-400,
+        .details {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 400;
+        }
+
+        .pt {
+            font-family: 'PT Serif', serif;
+            font-weight: 700;
+        }
+
+        .train {
+            font-family: 'Train One', cursive;
+        }
+
+    </style>
 
     {{-- css styles --}}
     @livewireStyles
@@ -32,7 +61,7 @@
 <body class="app sidebar-mini rtl">
     <!-- Navbar-->
     <header class="app-header">
-        <a class="app-header__logo" href="/">CGPA</a>
+        <a class="app-header__logo train" href="/">CGPA</a>
         <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
             aria-label="Hide Sidebar"></a>
         <!-- Navbar Right Menu-->
@@ -96,7 +125,8 @@
                     aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu dropdown-menu-right">
                     <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                    <li><a class="dropdown-item" href="{{ route('profile.show', auth()->user()->name) }}"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                    <li><a class="dropdown-item" href="{{ route('profile.show', auth()->user()->name) }}"><i
+                                class="fa fa-user fa-lg"></i> Profile</a></li>
                     <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();"><i
                                 class="fa fa-sign-out fa-lg"></i> Logout</a>
