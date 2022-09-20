@@ -1,1 +1,1 @@
-an app for student and teacher in uniabuja to calculate cgpa calculator
+### An app for student and teacher in uniabuja to calculate cgpa calculator
